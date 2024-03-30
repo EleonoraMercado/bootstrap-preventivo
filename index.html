@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- header -->
-    <header>
+    <header class="pb-5">
     <!-- nav -->
     <nav class="navbar bg-dark navbar-dark data-bs-theme navbar-expand-lg bg-body-tertiary">
         <div class="container">
@@ -32,9 +32,69 @@
         </div>
       </nav>
     </header>
-
-
+    
     <!-- main -->
+    <main>
+        <section class="pb-5">
+            <div class="container">
+                <h1>Richiesta preventivo</h1>
+                <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <form action="" id="addPreventivo">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" value="">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="cognome" class="form-label">Cognome</label>
+                                <input type="text" class="form-control" id="cognome" value="">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="lavori" class="form-label">Tipo di lavoro</label>
+                                <select class="form-select" aria-label="select lavori commisionabili" id="lavori">
+                                    <option selected>Seleziona il tipo di lavoro</option>
+                                    <option value="1">Backend Development</option>
+                                    <option value="2">Frontend Development</option>
+                                    <option value="3">Project Analysis</option>
+                                  </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="areaTesto" class="form-label">Inserisci il tipo di lavoro per la quale vuoi il preventivo</label>
+                                <textarea class="form-control" id="areaTesto" rows="3"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="codicePromo" class="form-label">Codice promozionale (opzionale)</label>
+                                <input type="text" class="form-control" id="codicePromo" value="">
+                            </div>
+
+                            <div class="form-check mb-5">
+                                <input class="form-check-input" type="checkbox" value="" id="checkPolicy">
+                                <label class="form-check-label" for="checkPolicy">
+                                  Accetto la Privacy Policy
+                                </label>
+                            </div>
+
+                            <button class="btn btn-primary btn-lg" type="submit">
+                                Calcola preventivo
+                            </button>                             
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <!-- form -->
 
