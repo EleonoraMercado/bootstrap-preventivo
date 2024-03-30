@@ -63,7 +63,7 @@
                             
                             <div class="mb-3">
                                 <label for="lavori" class="form-label">Tipo di lavoro</label>
-                                <select class="form-select" aria-label="select lavori commisionabili" id="lavori" required>
+                                <select class="form-select" name="lavori" aria-label="select lavori commisionabili" id="lavori" required>
                                     <option selected>Seleziona il tipo di lavoro</option>
                                     <option value="1">Backend Development</option>
                                     <option value="2">Frontend Development</option>
@@ -92,18 +92,7 @@
                                 <button class="btn btn-primary btn-lg" type="submit">
                                     Calcola preventivo
                                 </button>
-                                <!-- <table>
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>     -->
+                                <div id="stampaPrezzo"></div>
                             </div>
                             
                         </form>
