@@ -15,9 +15,20 @@ form.addEventListener('submit', addPreventivo);
 //funzione che accetta un parametro di tipo evento
 function addPreventivo(e) {
     
-    //disabilitare la propagazione del submit
+    //disabilito la propagazione del submit
     e.preventDefault();
-    
+
+    // Validazione del modulo utilizzando Bootstrap
+    if (form.checkValidity() === false) {
+        // Se il modulo non è valido, interrompi l'invio e la propagazione dell'evento
+        e.stopPropagation();
+
+        // Aggiungo la classe di validazione di Bootstrap
+        form.classList.add('was-validated');
+        return;
+    }
+
+//verifico se è stat selezionata un'opzione valida dalla select
 const lavori = document.getElementById('lavori').value;
 
 //recupero la tariffaoraria dall'oggetto di tariffe orarie
@@ -34,10 +45,7 @@ if (codiciPromozionaliValidi.includes(codicePromozionale)) {
     sconto = 0.25;
 } else if (codicePromozionale === '') {
         sconto = 0;
-} else {
-    //se il codice promozionale non è valido, mostro avviso
-    alert('Il codice promozionale inserito non è valido.')
-}
+} 
 
 //calcolo il prezzo per 10 ore, applicando lo sconto se presente
 const oreLavoro = 10;
@@ -52,3 +60,7 @@ prezzoHtml.innerHTML = `
 `;
 
 }
+
+// Aggiungo l'evento di submit del form
+form.addEventListener('submit', addPreventivo);
+
