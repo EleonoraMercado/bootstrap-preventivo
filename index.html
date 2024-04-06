@@ -45,30 +45,44 @@
                             <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
                         </div>
 
-                        <form action="" id="addPreventivo">
+                        <form class="needs-validation" novalidate action="" id="addPreventivo">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="nome" value="" required>
+                                <div class="invalid-feedback">
+                                    Per procedere devi inserire il tuo nome.
+                                </div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="cognome" class="form-label">Cognome</label>
                                 <input type="text" class="form-control" id="cognome" value="" required>
+                                <div class="invalid-feedback">
+                                    Per procedere devi inserire il tuo cognome.
+                                </div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback">
+                                    Per procedere devi inserire una mail valida.
+                                </div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="lavori" class="form-label">Tipo di lavoro</label>
                                 <select class="form-select" name="lavori" aria-label="select lavori commisionabili" id="lavori" required>
-                                    <option selected>Seleziona il tipo di lavoro</option>
+                                    <option value="">Seleziona il tipo di lavoro</option>
                                     <option value="1">Backend Development</option>
                                     <option value="2">Frontend Development</option>
                                     <option value="3">Project Analysis</option>
                                   </select>
+                                  <div id="lavori" class="invalid-feedback">
+                                    Per procedere scegliere un'opzione.
+                                  </div>
+                                </select>
+                                
                             </div>
                             
                             <div class="mb-3">
@@ -76,9 +90,10 @@
                                 <textarea class="form-control" id="areaTesto" rows="3"></textarea>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 position-relative">
                                 <label for="codicePromo" class="form-label">Codice promozionale (opzionale)</label>
-                                <input type="text" class="form-control" id="codicePromo" value="">
+                                <input type="text" class="form-control" aria-describedby="codicePromoInserisci" pattern="(YHDNU32|JANJC63|PWKCN25|SJDPO96|POCIE24)" title="Inserisci un codice promozionale valido" id="codicePromo" value="">
+                                <div class="invalid-tooltip">Il tuo codice sconto non è valido</div>
                             </div>
 
                             <div class="form-check mb-5">
@@ -86,13 +101,23 @@
                                 <label class="form-check-label" for="checkPolicy">
                                   Accetto la Privacy Policy
                                 </label>
+                                <div class="invalid-feedback">
+                                    Prima di procedere devi acettare i termini e le condizioni.
+                                </div>
                             </div>
 
-                            <div class="col-sm-12 col-md-8 d-flex justify-content-around mb-5">
-                                <button class="btn btn-primary btn-lg" type="submit">
-                                    Calcola preventivo
-                                </button>
-                                <div id="stampaPrezzo"></div>
+                            <div class="container mb-5">
+                                <div class="row">
+                                   <div class="col col-lg-6">
+                                        <button class="btn btn-primary btn-lg" type="submit">
+                                            Calcola preventivo
+                                        </button>
+                                   </div>
+                                    <div class="col col-lg-6" id="stampaPrezzo">
+                                        <!-- <b>€</b> -->
+                                        <!-- <span><b>200</b>,00</span> -->
+                                    </div>
+                                </div>
                             </div>
                             
                         </form>
