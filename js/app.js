@@ -51,16 +51,31 @@ if (codiciPromozionaliValidi.includes(codicePromozionale)) {
 const oreLavoro = 10;
 let prezzoTotale = tariffaLavoro * oreLavoro;
 prezzoTotale *= (1 - sconto);
-   
+
+//formatto il prezzo con due decimali
+const prezzoFormattato = prezzoTotale.toFixed(2);
+
+//trovo l'indice del punto decimale nella stringa
+const indicePuntoDecimale = prezzoFormattato.indexOf('.');
+
+//estraggo la parte intera del prezzo dalla stringa formattata
+const parteIntera = prezzoFormattato.substring(0, indicePuntoDecimale);
+
+//estraggo la parte decimale del prezzo della stringa formattata
+const parteDecimale = prezzoFormattato.substring(indicePuntoDecimale + 1);
+
 //creo un div per stampare il prezzo nel dom
 const prezzoHtml = document.getElementById('stampaPrezzo');
+
+//assegno la stringa html al div
 prezzoHtml.innerHTML = `
-<div><b>Prezzo finale</b></div>
-<div><b>&euro;</b>${prezzoTotale.toFixed(2)}</div>
+<b>&euro;
+<span>${parteIntera}</span>
+</b>
+.${parteDecimale}
 `;
 
-}
+};
 
-// Aggiungo l'evento di submit del form
-form.addEventListener('submit', addPreventivo);
+
 
