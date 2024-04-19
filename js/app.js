@@ -69,6 +69,7 @@ const prezzoHtml = document.getElementById('stampaPrezzo');
 
 //assegno la stringa html al div
 prezzoHtml.innerHTML = `
+<p><b>Prezzo Totale</b></p>
 <b>&euro;
 <span>${parteIntera}</span>
 </b>
